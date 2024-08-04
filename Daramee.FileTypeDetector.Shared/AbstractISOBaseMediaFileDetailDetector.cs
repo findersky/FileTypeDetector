@@ -15,17 +15,20 @@ namespace Daramee.FileTypeDetector
 		{
 			using ( BinaryReader reader = new BinaryReader ( stream, Encoding.UTF8, true ) )
 			{
-				int offset = reader.ReadInt32 ();
-				// ftyp
-				if ( reader.ReadByte () == 0x66 && reader.ReadByte () == 0x74 && reader.ReadByte () == 0x79 && reader.ReadByte () == 0x70 )
+				if (reader.PeekChar() > -1)
 				{
-					foreach ( var ns in NextSignature )
+					int offset = reader.ReadInt32();
+					// ftyp
+					if (reader.ReadByte() == 0x66 && reader.ReadByte() == 0x74 && reader.ReadByte() == 0x79 && reader.ReadByte() == 0x70)
 					{
-						stream.Position = 8;
-						string readed = Encoding.GetEncoding ( "ascii" ).GetString ( reader.ReadBytes ( ns.Length ), 0, ns.Length );
-						stream.Position = offset;
-						if ( ns == readed )
-							return true;
+						foreach (var ns in NextSignature)
+						{
+							stream.Position = 8;
+							string readed = Encoding.GetEncoding("ascii").GetString(reader.ReadBytes(ns.Length), 0, ns.Length);
+							stream.Position = offset;
+							if (ns == readed)
+								return true;
+						}
 					}
 				}
 			}

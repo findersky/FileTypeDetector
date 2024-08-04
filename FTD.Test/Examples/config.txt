@@ -1,0 +1,31 @@
+1、数据库链接中没有;SslMode=None;的全部加上
+
+2、在[mysqld]节点下如下内容，如果以及存在default_authentication_plugin节点，覆盖即可。
+default_authentication_plugin=mysql_native_password
+
+执行以下代码完成链接MYSQL的用户密码的修改。
+
+alter user '用户'@'%' identified with mysql_native_password by '密码';
+
+flush privileges;
+
+
+示例
+alter user 'root'@'%' identified with mysql_native_password by '123456';
+flush privileges;
+
+在/data/webconfig/目录下 找一个服务配置appsettings.json打开，用配置文件中的用户以及密码进行第二步的设置
+
+
+3、在[mysqld]节点下增加以下内容，如果以及存在sql_mode节点，请替换
+
+sql_mode=STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+
+                   
+
+
+
+
+
+
+

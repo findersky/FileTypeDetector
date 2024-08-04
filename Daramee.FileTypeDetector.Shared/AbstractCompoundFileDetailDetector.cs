@@ -19,7 +19,7 @@ namespace Daramee.FileTypeDetector
 
 		protected abstract bool IsValidChunk ( string chunkName, byte [] chunkData );
 
-		public new bool Detect ( Stream stream )
+		public override bool Detect ( Stream stream )
 		{
 			if ( !base.Detect ( stream ) )
 				return false;

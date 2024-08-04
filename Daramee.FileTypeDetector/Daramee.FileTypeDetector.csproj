@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46</TargetFrameworks>
-    <SignAssembly>true</SignAssembly>
+    <TargetFrameworks>netstandard2.0;net46;net48</TargetFrameworks>
+    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>FileTypeDetector.pfx</AssemblyOriginatorKeyFile>
     <DelaySign>false</DelaySign>
     <PackageId>Daramee.FileTypeDetector</PackageId>

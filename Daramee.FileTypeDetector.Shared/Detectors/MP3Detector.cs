@@ -5,6 +5,9 @@
 	{
 		static SignatureInformation [] MP3_SignatureInfo = new []
 		{
+			new SignatureInformation () { Position = 0, Signature = new byte [] { 0xFF, 0xE3 } },
+			new SignatureInformation () { Position = 0, Signature = new byte [] { 0xFF, 0xF2 } },
+			new SignatureInformation () { Position = 0, Signature = new byte [] { 0xFF, 0xF3 } },
 			new SignatureInformation () { Position = 0, Signature = new byte [] { 0xFF, 0xFB } },
 			new SignatureInformation () { Position = 0, Signature = new byte [] { 0x49, 0x44, 0x33 } },
 		};

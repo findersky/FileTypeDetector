@@ -15,7 +15,7 @@ namespace FTD.Test
 		static void Main ( string [] args )
 		{
 			string [] filenames = Directory.GetFiles ( @"..\..\Examples" );
-			DetectorService.AddDetectors ( null );
+			DetectorService.AddDetectors (null);
 
 			Stopwatch stopwatch = new Stopwatch ();
 			stopwatch.Start ();
@@ -29,6 +29,7 @@ namespace FTD.Test
 			}
 			stopwatch.Stop ();
 			Console.WriteLine ( $"Detection Time: {stopwatch.Elapsed}(Average: {TimeSpan.FromMilliseconds ( stopwatch.ElapsedMilliseconds / filenames.Length )})" );
+			Console.Read();
 		}
 	}
 }

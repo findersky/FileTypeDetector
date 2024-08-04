@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <title></title>
+    <script src="jsencrypt.min.js"></script>
+    <script>
+        function RasEncryption(content) {
+            var encryptor = new JSEncrypt();
+            var pubKey = '-----BEGIN PUBLIC KEY-----MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvg+YxFmfUQUOgQnyWyzxtRohFEMoI4KpWTdlhWoTQuUgYWaUTtSo3PCw6F+L8Y9uvejqqq4drEdTq/Fpu8rbp2cu3YaYZJyl7CzvtaNhY/u5QyHSXAEYuOMshfQRkVqcdZzTsSVbIvAtm0y44eYDmua4DBmVw52zLfoNVhb1guc8oltDe4xAEaC1WO2m7nEcZghp5vvcVW1DqigJre6bB7QsJlnPKtP+EU6niHvGyRHtEL000BdynhII3zczB6eqpdg5mdfww0Wjsfr7L1KYgJOUXtgSh5Mzt0IzYkTzkivhVTOKBONh0sV/a1okYI90YlcGuKv3QOLT6jw8Vvgu8wIDAQAB-----END PUBLIC KEY-----'
+            encryptor.setPublicKey(pubKey)//设置公钥
+            var rsaPassWord = encryptor.encrypt(content);
+            return rsaPassWord;
+        }
+        console.log(RasEncryption("admin"));
+    </script>
+</head>
+
+<body>
+<!--
+-----BEGIN RSA PRIVATE KEY-----
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC+D5jEWZ9RBQ6B
+CfJbLPG1GiEUQygjgqlZN2WFahNC5SBhZpRO1Kjc8LDoX4vxj2696Oqqrh2sR1Or
+8Wm7ytunZy7dhphknKXsLO+1o2Fj+7lDIdJcARi44yyF9BGRWpx1nNOxJVsi8C2b
+TLjh5gOa5rgMGZXDnbMt+g1WFvWC5zyiW0N7jEARoLVY7abucRxmCGnm+9xVbUOq
+KAmt7psHtCwmWc8q0/4RTqeIe8bJEe0QvTTQF3KeEgjfNzMHp6ql2DmZ1/DDRaOx
++vsvUpiAk5Re2BKHkzO3QjNiRPOSK+FVM4oE42HSxX9rWiRgj3RiVwa4q/dA4tPq
+PDxW+C7zAgMBAAECggEBALyPBrXOYIPl62TT9HDGXyqYOLc8hUbtq4uKrRq2iVN1
+tDFNrteincFMvYZcvJ8z+N9Kg/4/bcrsnLNad9bKxC8J7HH0xZ4T130/e7YN2GJ0
+a3GRzXxfziInp5Vh9kfpyI3awB7ge9FmzShk7ouXQn5cZb4DaBTBkPGNQcvmTT7G
+6iJAQRyOfd7Kb4cqbuBxObcG+o/TPMjqGQRuLxRRcXaf3X27azeG91Mj/QrWSBL1
+mnnTVZVyNLOJyBPe76HbwzRubSPooL/kmCvJYRO5qUiegPH8nz0mHholrY8AW6f9
+Gz6h6HO0zLcyC3N8rrpQrp5TIg+6paCb+StqlzK3hsECgYEA7Gxb6i4xpZzR5YPP
+oG1JoAZWq0E7g/jNN2KGl0g8Vhbc8prJ/FQkCebFflirTPGwsdjjvVCrqiQdy1Wd
+8WE21ifooxugzNXKkHpPy7+HtEnjjs6FiR+izZQey4gLpmFnFYcp6csXG8Sups7X
+gIrAHb/uutx5xtDiMHS97Yb5eyECgYEAzcx10zS7RkJ84g5RlZY89pdDRfU2BGTl
+31xjKhszTL2GQuvmeOEQusF8stX5uDke8epiNj/epk4zZXeV3Uv6vvQ+4xGG30pY
+Rd6UuDPkLkb7I7OyaMxQwXtYw+h0H1LKvpWZfrB0p69Ck0b0ugWeewfnhWiN8F9d
+cBddc9h6G5MCgYBp00sFNK4mWl6dpHWQcrrM9Wlf+LACL6D0FJb4Km5PfqZhtaWJ
+28PR5skp99iddWXJBbNS70QXwVjQxj8PZ5tbGrwIHnrIlT25k/YZ1l6Q9a31Iz4k
+ldOSv6VVJ01HqTuyKDE7pBtw44XlxpoxwGmkJ2BdpgigVKmaVPca1hrf4QKBgQCq
++VVeHa4EhhJYgArZmtKVD0ANq9Wvut+bPJcKEUUCWWZkzLVR8bHDZiIiNVDc81+5
+Hb9wUIm6YreiccJo8smjwSlJ3nLNqWdCzNODYWEN7VyR4aW0GSJyS/aH8+QdbdwQ
+kBrQvOp9sUY/MzD4JtjuX7fCBwX9EE2BZXf3WX7AzwKBgGz5Gv88LCLbOc1tfk91
+vR0SCehyyoqzQGcwDJTq1D7h9GAF8TFiRpMiSV0Z6FMQPuobxmVAbgcZhzlXlNBK
+3x+C5xrGeuK5feH/qEIN2MWERJ+PtmAvVdDQCGUILjq5ZkmVQUOgsxwOCkTgJ4I3
+2NTL7JSsbNsN07Wj9N3lqt7K
+-----END RSA PRIVATE KEY-----    
+-->
+</body>
+
+</html>
